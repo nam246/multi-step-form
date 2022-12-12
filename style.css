@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --primary-marine-blue: hsl(213, 96%, 18%);
+    --primary-purplish-blue: hsl(243, 100%, 62%);
+    --primary-pastel-blue: hsl(228, 100%, 84%);
+    --primary-light-blue: hsl(206, 94%, 87%);
+    --primary-strawberry-red: hsl(354, 84%, 57%);
+    --neutral-cool-gray: hsl(231, 11%, 63%);
+    --neutral-light-gray: hsl(229, 24%, 87%);
+    --neutral-magnolia: hsl(217, 100%, 97%);
+    --neutral-alabaster: hsl(231, 100%, 99%);
+    --neutral-white: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: burlywood;
+}
+
+.non-active {
+    display: none;
+}
+
+.light-text {
+    color: var(--neutral-white);
+}
+
+.gray-text {
+    color: var(--neutral-cool-gray);
+}
+
+.blue-text {
+    color: var(--primary-marine-blue);
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    background-color: var(--neutral-white);
+    border-radius: 5px;
+    padding: 12px;
+    width: 45rem;
+    height: 37rem;
+}
+
+.container .sidebar {
+    background: var(--neutral-cool-gray) url("./assets/images/bg-sidebar-desktop.svg") no-repeat center;
+    background-size: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 12px;
+    display: block;
+}
+
+.container .sidebar .sidebar-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    padding: 8px;
+}
+
+.container .sidebar .sidebar-item .sidebar-item-text {
+    width: 8rem;
+}
+
+.sidebar-item .sidebar-item-number {
+    border: var(--neutral-alabaster) solid 1px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.sidebar-active {
+    background-color: var(--neutral-magnolia);
+    color: var(--primary-marine-blue);
+}
+
+.active-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+}
+
+.active-state .tab .tab-title {
+    margin-bottom: 24px;
+}
+
+.active-state .tab .tab-title h1 {
+    color: var(--primary-marine-blue);
+}
+
+.active-state .tab .tab-title h5 {
+    color: var(--neutral-light-gray);
+}
+
+#tab-information {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#tab-information .tab-input {
+    color: var(--primary-marine-blue);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+#tab-information .tab-input input{
+    border: 1px solid var(--neutral-cool-gray);
+    outline: none;
+    padding: 8px;
+    width: 24rem;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.error {
+    border: 1px solid var(--primary-strawberry-red);
+}
+
+#tab-information .tab-input input:focus {
+    border: 1px solid var(--primary-purplish-blue);
+}
+
+#tab-option {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 320px;
+}
+
+#tab-option .plan-pack {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    width: 90px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: left;
+    border: 1px solid var(--neutral-cool-gray);
+}
+
+#tab-option .plan-pack:hover {
+    border: 1px solid var(--primary-purplish-blue);
+}
+
+#tab-option .plan-pack img {
+    width: 40px;
+    margin-bottom: 24px;
+    padding-left: 18px;
+}
+
+#tab-option .plan-pack input {
+    display: none;
+}
+
+.tab-checkbox-switch {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.tab-checkbox-switch .switch-input {
+    display: none;
+}
+
+.tab-checkbox-switch .switch-label {
+    display: block;
+    width: 48px;
+    height: 24px;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+}
+
+.tab-checkbox-switch .switch-label::before,
+.tab-checkbox-switch .switch-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.tab-checkbox-switch .switch-label::before {
+    width: 100%;
+    height: 100%;
+    background-color: var(--neutral-light-gray);
+    border-radius: 9999em;
+    transition: var(--neutral-light-gray) 0.25 ease;
+}
+
+.tab-checkbox-switch .switch-label::after {
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--neutral-white);
+    transition: left 0.1s ease;
+}
+
+.switch-input:checked + .switch-label::before {
+    background-color: var(--primary-marine-blue);
+}
+
+.switch-input:checked + .switch-label::after {
+    left: 24px;
+}
+
+.tab .tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tab .tab-content .tab-content-item {
+    border: 1px solid var(--primary-marine-blue);
+    border-radius: 5px;
+    padding: 24px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tab-content-item-price {
+    margin-left: auto;
+    margin-right: 0;
+    font-weight: 700;
+}
+
+.tab .double-check {
+    background-color: var(--neutral-light-gray);
+    width: 350px;
+    height: 250px;
+    margin-top: 24px;
+    border-radius: 5px;
+}
+
+.tab .thankyou {
+    text-align: center;
+}
+
+.button-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-field button{
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-field .back-btn {
+    background: none;
+    border: none;
+    color: var(--neutral-cool-gray);
+}
+
+.button-field .back-btn:hover {
+    color: var(--primary-marine-blue);
+}
+
+.button-field .next-btn {
+    background-color: var(--primary-marine-blue);
+    border: none;
+    color: var(--neutral-white);
+}

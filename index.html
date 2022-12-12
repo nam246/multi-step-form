@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar start -->
+    <div class="sidebar">
+      <!-- <img src="./assets/images/bg-sidebar-desktop.svg" alt=""> -->
+      <div class="sidebar-item">
+        <div class="sidebar-item-number light-text sidebar-active">1</div>
+        <div class="sidebar-item-text">
+          <p class="gray-text">Step 1</p>
+          <p class="light-text">Your info</p>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-item-number light-text">2</div>
+        <div class="sidebar-item-text">
+          <p class="gray-text">Step 2</p>
+          <p class="light-text">Select plan</p>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-item-number light-text">3</div>
+        <div class="sidebar-item-text">
+          <p class="gray-text">Step 3</p>
+          <p class="light-text">Add-ons</p>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-item-number light-text">4  </div>
+        <div class="sidebar-item-text">
+          <p class="gray-text">Step 4</p>
+          <p class="light-text">Summary</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar end -->
+    <div class="active-state">
+      <form action="">
+        <!-- Step 1 start -->
+        <div class="tab">
+          <div class="tab-title">
+            <h1>Personal info</h1>
+            <h5>Please provide your name, email address, and phone number.</h5>
+          </div>
+          <div id="tab-information">
+            <label class="tab-input" for="name">
+              Name <br>
+              <input type="text" placeholder="e.g. Stephen King" id="name">
+            </label>
+            <label class="tab-input" for="email">
+              Email Address <br>
+              <input type="email" placeholder="e.g. stephenking@lorem.com" id="email">
+            </label>
+            <label class="tab-input" for="phonenumber">
+              Phone Number <br>
+              <input type="text" placeholder="e.g. +1 234 567 890" id="phonenumber">
+            </label>
+          </div>
+        </div>
+        <!-- Step 1 end -->
+        <!-- Step 2 start -->
+        <div class="tab non-active">
+          <div class="tab-title">
+            <h1>Select your plan</h1>
+            <h5>You have the option of monthly or yearly billing.</h5>
+          </div>
+          <div id="tab-option">
+            <label class="plan-pack" for="arcade">
+              <img src="./assets/images/icon-arcade.svg" alt="">
+              <h4 class="blue-text">Arcade</h4>
+              <p class="gray-text">$9/mo</p>
+              <input type="radio" name="option-group" class="plan-selector" id="arcade">
+            </label>
+            <label class="plan-pack" for="advanced">
+              <img src="./assets/images/icon-advanced.svg" alt="">
+              <h4 class="blue-text">Advanced</h4>
+              <p class="gray-text">$12/mo</p>
+              <input type="radio" name="option-group" class="plan-selector" id="advanced">
+            </label>
+            <label class="plan-pack" for="pro">
+              <img src="./assets/images/icon-pro.svg" alt="">
+              <h4 class="blue-text">Pro</h4>
+              <p class="gray-text">$15/mo</p>
+              <input type="radio" name="option-group" class="plan-selector" id="pro">
+            </label>
+            <span class="gray-text monthly-plan" style="font-weight: 700;">Monthly</span>
+            <span class="tab-checkbox-switch">
+              <input type="checkbox" id="switch" class="switch-input">
+              <label for="switch" class="switch-label">Monthly</label>
+            </span>
+            <span class="gray-text yearly-plan" style="font-weight: 700;" >Yearly</span>
+          </div>
+        </div>
+        <!-- Step 2 end -->
+        <!-- Step 3 start -->
+        <div class="tab non-active">
+          <div class="tab-title">
+            <h1>Pick add-ons</h1>
+            <h5>Add-ons help enhance your gaming experience.</h5>
+          </div>
+          <div class="tab-content">
+            <div class="tab-content-item">
+              <input type="checkbox" name="" id="access">
+              <label for="access">
+                <h5>Online service</h5>
+                <p>Access to multiplayer games</p>
+              </label>
+              <label for="access" class="tab-content-item-price blue-text">+$1/mo</label>
+            </div>
+            <div class="tab-content-item">
+              <input type="checkbox" name="" id="storage">
+              <label for="storage">
+                <h5>Larger storage</h5>
+                <p>Extra 1TB of cloud save</p>
+              </label>
+              <label for="profile" class="tab-content-item-price blue-text">+$2/mo</label>
+            </div>
+            <div class="tab-content-item">
+              <input type="checkbox" name="" id="profile">
+              <label for="profile">
+                <h5>Customizable Profile</h5>
+                <p>Custom theme on your profile</p>
+              </label>
+              <label for="profile" class="tab-content-item-price blue-text">+$2/mo</label>
+            </div>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+        <!-- Step 4 start -->
+        <div class="tab non-active">
+          <div class="tab-title">
+            <h1>Finishing up</h1>
+            <h5>Double-check everything looks OK before confirming.</h5>
+            <div class="double-check">
+                <h5 class="blue-text">
+                  <!-- Dynamically add subscription and add-on selections here -->
+                  Arcade (Monthly)
+                  <!-- Total (per month/year)
+                    Confirm -->
+                </h5>
+            </div>
+          </div>
+        </div>  
+        <!-- Step 4 end -->
+        <!-- Step 5 start -->
+        <div class="tab non-active">
+          <div class="thankyou">
+            <img src="./assets/images/icon-thank-you.svg" alt="">
+            <h1>Thank you!</h1>
+            <p>Thanks for confirming your subscription! We hope you have fun 
+              using our platform. If you ever need support, please feel free 
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </div>
+        <!-- Step 5 end -->
+      </form>
+      <div class="button-field">
+        <button class="back-btn">Go Back</button>
+        <button class="next-btn">Next Step</button>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
